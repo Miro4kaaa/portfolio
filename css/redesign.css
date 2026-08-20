@@ -541,7 +541,7 @@ h1, h2, h3, .section-title-v2, .hero-line, .big-cta-text, .projects-page-header 
     .hero-v2-avatar { width: 180px; align-self: flex-end; }
     .hero-line { font-size: clamp(3.5rem, 18vw, 6rem); }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .how-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    
     .projects-grid-v2 { grid-template-columns: 1fr; }
     .big-cta-text { font-size: clamp(3rem, 12vw, 6rem); }
 }
@@ -580,10 +580,7 @@ span.accent {
 }
 
 @media (max-width: 768px) {
-    .how-item { padding: 1rem; }
-    .how-item h3 { font-size: 1rem; }
-    .how-item p { font-size: 0.8rem; }
-    .how-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    
 }
 
 @media (max-width: 768px) {
@@ -619,4 +616,27 @@ span.accent {
     .big-cta-content {
         display: contents; /* Allows reordering if needed */
     }
+}
+
+.projects-main-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+@media (max-width: 768px) {
+    .projects-main-title {
+        margin-bottom: 1.5rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .how-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; width: 100% !important; overflow: hidden; }
+    .how-item { padding: 0.8rem 0.4rem !important; min-width: 0 !important; }
+    .how-item h3 { font-size: 0.9rem !important; margin-bottom: 0.2rem !important; }
+    .how-item p { font-size: 0.75rem !important; line-height: 1.2 !important; }
+    .how-item .how-icon { width: 40px !important; height: 40px !important; margin-bottom: 0.5rem !important; }
+    .how-item .how-icon svg { width: 20px !important; height: 20px !important; }
+
 }
