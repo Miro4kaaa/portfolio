@@ -408,7 +408,7 @@ h1, h2, h3, .section-title-v2, .hero-line, .big-cta-text, .projects-page-header 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    padding: 4rem 5%;
+    padding: 1rem 5% 4rem;
     max-width: 1400px;
     margin: 0 auto; position: relative;
 }
@@ -508,7 +508,7 @@ h1, h2, h3, .section-title-v2, .hero-line, .big-cta-text, .projects-page-header 
 
 /* ---- PROJECTS PAGE HEADER ---- */
 .projects-page-header {
-    padding: 6rem 5% 2rem;
+    padding: 4.5rem 5% 1rem;
     text-align: center;
 }
 
@@ -552,7 +552,8 @@ span.accent {
 @media (max-width: 768px) {
     section, .stats-section, .how-section { padding: 3rem 5% !important; overflow: hidden; }
     .big-cta-section { padding: 5rem 5% 3rem !important; overflow: hidden; }
-    .section-title-v2, .projects-page-header h1 { font-size: clamp(2.2rem, 8vw, 3rem) !important; margin-bottom: 2rem !important; }
+    .section-title-v2 { font-size: clamp(2.2rem, 8vw, 3rem) !important; margin-bottom: 2rem !important; }
+    .projects-page-header h1 { font-size: clamp(2.2rem, 8vw, 3rem) !important; margin-bottom: 0.5rem !important; }
     .projects-page-header { padding: 6rem 5% 1rem !important; }
     
     .hero-v2-content { flex-direction: column; align-items: flex-start; padding-top: 5rem; padding-bottom: 5rem; }

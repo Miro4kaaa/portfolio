@@ -9,7 +9,7 @@
     <style>
         .video-grid-5 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1rem;
             max-width: 1400px;
             margin: 2rem auto;
@@ -68,7 +68,7 @@
             background: #000;
         }
         @media (max-width: 1100px) {
-            .video-grid-5 { grid-template-columns: repeat(2, 1fr); }
+            .video-grid-5 { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 700px) {
             .video-grid-5 { grid-template-columns: repeat(2, 1fr); }
@@ -227,10 +227,12 @@
                 </div>
             </div>
         </div>
-        <div class="banner-wrapper">
-            <video src="images/Видео-креативы/video_banner_pan_ai_3.mp4" style="width:100%; height:auto; display:block;" preload="metadata" data-preview-time="1"></video>
-            <div class="play-icon" style="width: 64px; height: 64px;">
-                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; margin-left: 5px;"><path d="M8 5v14l11-7z"/></svg>
+        <div style="max-width: 1400px; margin: 2rem auto 4rem; padding: 0 5%;">
+            <div class="banner-wrapper" style="margin: 0; width: 100%; max-width: 100%;">
+                <video src="images/Видео-креативы/video_banner_pan_ai_3.mp4" style="width:100%; height:auto; display:block;" preload="metadata" data-preview-time="1"></video>
+                <div class="play-icon" style="width: 64px; height: 64px;">
+                    <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; margin-left: 5px;"><path d="M8 5v14l11-7z"/></svg>
+                </div>
             </div>
         </div>
 
