@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: 3D графика | Анна Логунова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
+    <style>
+        .case-intro {
+            max-width: 1400px;
+            margin: 3rem auto 2rem;
+            padding: 0 5%;
+            text-align: center;
+        }
+        .case-intro h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #0a0a0f;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .case-intro p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .case-gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .case-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            cursor: zoom-in;
+        }
+        .case-cert {
+            max-width: 1400px;
+            margin: 3rem auto 4rem;
+            padding: 0 5%;
+            text-align: center;
+        }
+        .case-cert h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #0a0a0f;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .case-cert img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Анна Логунова Логотип"></a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Обо мне</a></li>
+                <li><a href="projects.html" class="active">Кейсы</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="case-intro">
+            <h1><span class="amb" style="color: var(--primary-color); font-size: 1.2em;">3D</span><span style="color: #fff; text-transform: uppercase;">-ГРАФИКА</span></h1>
+            <p>
+                Учебные работы, созданные в&nbsp;процессе освоения 3D-моделирования в&nbsp;Blender.
+                В&nbsp;каждом проекте — изучение ключевых принципов: работа со&nbsp;светом и&nbsp;тенью,
+                построение объёма и&nbsp;формы, настройка материалов и&nbsp;рендер в&nbsp;Cycles.
+                Это база, которая даёт понимание трёхмерного пространства и&nbsp;позволяет
+                создавать убедительный визуал с&nbsp;нуля.
+            </p>
+        </div>
+
+        <div class="case-gallery">
+            <img src="images/3D графика Работа с Blender/Box_brandianna.jpg" alt="Box Brandianna" class="zoomable">
+            <img src="images/3D графика Работа с Blender/House_Kaino.jpg" alt="House Kaino" class="zoomable">
+            <img src="images/3D графика Работа с Blender/house_cycles.png" alt="House Cycles" class="zoomable">
+            <img src="images/3D графика Работа с Blender/wagon.jpg" alt="Wagon" class="zoomable">
+        </div>
+
+        <div class="case-cert">
+            <img src="images/3D графика Работа с Blender/sertificate.png" alt="Сертификат Blender">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Анна Логунова. Создано с помощью AI-подхода.</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', () => img.classList.toggle('zoomed'));
+        });
+    </script>
+</body>
+</html>

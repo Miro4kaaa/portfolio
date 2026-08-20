@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: Графический дизайн | Анна Логунова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Анна Логунова Логотип"></a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Обо мне</a></li>
+                <li><a href="projects.html" class="active">Кейсы</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="pinterest-grid">
+            <img src="images/Графический дизайн/147-Graffiti.jpg" alt="Graffiti" class="zoomable">
+            <img src="images/Графический дизайн/2b14e0148052231.62ce826b4590d.jpg" alt="Design" class="zoomable">
+            <img src="images/Графический дизайн/Amore_logo_02.jpg" alt="Amore Logo" class="zoomable">
+            <img src="images/Графический дизайн/Amore_logo_03.jpg" alt="Amore Logo" class="zoomable">
+            <img src="images/Графический дизайн/Elementica_logo_03.jpg" alt="Elementica Logo" class="zoomable">
+            <img src="images/Графический дизайн/Elementica_logo_04.jpg" alt="Elementica Logo" class="zoomable">
+            <img src="images/Графический дизайн/SG-1.jpg" alt="SG-1" class="zoomable">
+            <img src="images/Графический дизайн/SG-2.jpg" alt="SG-2" class="zoomable">
+            <img src="images/Графический дизайн/SG-3.jpg" alt="SG-3" class="zoomable">
+            <img src="images/Графический дизайн/SG-4.jpg" alt="SG-4" class="zoomable">
+            <img src="images/Графический дизайн/Travel_2.jpg" alt="Travel" class="zoomable">
+            <img src="images/Графический дизайн/postcard.jpg" alt="Postcard" class="zoomable">
+            <img src="images/Графический дизайн/postcards.jpg" alt="Postcards" class="zoomable">
+            <img src="images/Графический дизайн/Сборка 1 (1).png" alt="Сборка" class="zoomable">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Анна Логунова. Создано с помощью AI-подхода.</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.toggle('zoomed');
+            });
+        });
+    </script>
+</body>
+</html>
