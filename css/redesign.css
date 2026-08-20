@@ -541,7 +541,7 @@ h1, h2, h3, .section-title-v2, .hero-line, .big-cta-text, .projects-page-header 
     .hero-v2-avatar { width: 180px; align-self: flex-end; }
     .hero-line { font-size: clamp(3.5rem, 18vw, 6rem); }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .how-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
     .projects-grid-v2 { grid-template-columns: 1fr; }
     .big-cta-text { font-size: clamp(3rem, 12vw, 6rem); }
 }
@@ -552,4 +552,71 @@ span.accent {
     -webkit-text-stroke: 0;
     -webkit-text-fill-color: var(--primary-color);
     background: none;
+}
+
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: block !important; }
+    
+    .hero-mobile-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 5%;
+        background: rgba(15, 23, 42, 0.95);
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        z-index: 99;
+        backdrop-filter: blur(10px);
+    }
+    .hero-mobile-nav .nav-links.active {
+        display: flex;
+    }
+    .hero-mobile-nav .nav-links li { margin: 0.5rem 0; }
+}
+
+@media (max-width: 768px) {
+    .how-card { padding: 1rem; }
+    .how-card h3 { font-size: 1rem; }
+    .how-card p { font-size: 0.8rem; }
+    .how-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+}
+
+@media (max-width: 768px) {
+    .big-cta-card {
+        padding: 3rem 1rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .big-cta-text {
+        font-size: clamp(2rem, 9vw, 3rem) !important;
+        margin: 1.5rem 0 !important;
+        line-height: 1.1;
+    }
+    .big-cta-images {
+        position: static !important;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .big-cta-images img {
+        position: static !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        transform: none !important;
+        border-radius: 16px !important;
+    }
+    /* Hide the second image or show both stacked? User said "картинки в этом разделе можно разместить сверху и снизу текста по центру, сделать их побольше размером" */
+    
+    .big-cta-content {
+        display: contents; /* Allows reordering if needed */
+    }
 }

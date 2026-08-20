@@ -713,3 +713,9 @@ footer {
     .pinterest-grid { column-count: 1; }
 }
 
+
+@media (max-width: 768px) {
+    .long-landing { padding: 0 !important; }
+    .pinterest-grid { padding: 0 !important; gap: 0 !important; }
+    .pinterest-grid .pin-col { gap: 0 !important; }
+}
