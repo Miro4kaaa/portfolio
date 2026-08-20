@@ -575,7 +575,7 @@ span.accent {
     .projects-grid-v2 { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 5% 3rem; }
     
     .big-cta-card { padding: 3rem 1.5rem !important; display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .big-cta-text { font-size: clamp(4rem, 16vw, 6rem) !important; margin: 1.5rem 0 !important; line-height: 1.1; }
+    .big-cta-text { font-size: clamp(2.5rem, 11vw, 4rem) !important; margin: 1.5rem 0 !important; line-height: 1.1; word-break: break-word; }
     .big-cta-images { position: static !important; display: flex; flex-direction: column; gap: 1.5rem; align-items: center; margin-top: 1rem; }
     
     .desktop-only { display: none !important; }

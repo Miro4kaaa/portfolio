@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Video Modal Logic with Gallery
-    const videoItems = Array.from(document.querySelectorAll(".video-grid-5 video, .banner-video"));
+    const videoItems = Array.from(document.querySelectorAll(".video-wrapper video, .banner-wrapper video, .video-grid-5 video, .banner-video"));
     const modal = document.getElementById("videoModal");
     const modalVideo = document.getElementById("modalVideo");
     const closeModal = document.querySelector(".close-modal");
