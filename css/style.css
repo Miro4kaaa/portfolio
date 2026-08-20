@@ -714,8 +714,25 @@ footer {
 }
 
 
+
 @media (max-width: 768px) {
-    .long-landing { padding: 0 !important; }
-    .pinterest-grid { padding: 0 !important; gap: 0 !important; }
-    .pinterest-grid .pin-col { gap: 0 !important; }
+    .long-landing { 
+        padding: 0 !important; 
+        width: 100vw !important; 
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin-top: 0 !important;
+    }
+    .pinterest-grid { 
+        padding: 0 !important; 
+        width: 100vw !important; 
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        gap: 0 !important;
+    }
 }
+

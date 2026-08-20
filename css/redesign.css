@@ -580,10 +580,10 @@ span.accent {
 }
 
 @media (max-width: 768px) {
-    .how-card { padding: 1rem; }
-    .how-card h3 { font-size: 1rem; }
-    .how-card p { font-size: 0.8rem; }
-    .how-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .how-item { padding: 1rem; }
+    .how-item h3 { font-size: 1rem; }
+    .how-item p { font-size: 0.8rem; }
+    .how-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
 }
 
 @media (max-width: 768px) {
