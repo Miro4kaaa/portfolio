@@ -35,17 +35,7 @@
             <span class="dot">·</span>
         </div>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Анна Логунова Логотип"></a>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Обо мне</a></li>
-                <li><a href="projects.html">Кейсы</a></li>
-                <li><a href="contact.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    
 
     </div>
 
@@ -55,6 +45,24 @@
             <source src="images/hero.mp4" type="video/mp4">
         </video>
         <div class="hero-v2-overlay"></div>
+        
+        <nav class="hero-nav desktop-only" style="position: absolute; top: 2.5rem; right: 5%; z-index: 10;">
+            <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #8b5cf6; padding-bottom: 4px;">Обо мне</a></li>
+                <li><a href="projects.html" style="color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'">Кейсы</a></li>
+                <li><a href="contact.html" style="color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-mobile-nav mobile-only">
+            <div class="menu-toggle" style="position: absolute; top: 1.5rem; right: 5%; color: #fff; font-size: 2rem; z-index: 100; cursor: pointer;">☰</div>
+            <ul class="nav-links" style="top: 4rem;">
+                <li><a href="index.html" class="active">Обо мне</a></li>
+                <li><a href="projects.html">Кейсы</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div>
+
 
         
 
@@ -62,12 +70,13 @@
             <div class="hero-v2-text">
                 <img src="images/text.png?v=3" alt="AI-CREATOR GRAPHIC DESIGN" style="max-width: 100%; height: auto; display: block; margin-bottom: 1.5rem;">
                 <p class="hero-v2-sub">Создаю визуальный контент с&nbsp;помощью передовых<br>AI-инструментов для e-commerce и&nbsp;маркетплейсов</p>
-                <div class="hero-v2-buttons">
+                <div class="hero-v2-avatar mobile-only" style="margin-bottom: 1.5rem; width: 150px;"><img src="images/avatar.png" alt="Анна Логунова"></div>
+                    <div class="hero-v2-buttons">
                     <a href="projects.html" class="btn-v2 btn-v2-filled">Смотреть работы</a>
                     <a href="contact.html" class="btn-v2 btn-v2-outline">Связаться</a>
                 </div>
             </div>
-            <div class="hero-v2-avatar">
+            <div class="hero-v2-avatar desktop-only">
                 <img src="images/avatar.png" alt="Анна Логунова">
             </div>
         </div>
@@ -98,17 +107,7 @@
             <span class="dot">·</span>
         </div>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Анна Логунова Логотип"></a>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Обо мне</a></li>
-                <li><a href="projects.html">Кейсы</a></li>
-                <li><a href="contact.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    
 
     </div>
 
@@ -185,15 +184,19 @@
                 </svg>
             </div>
             
+            
             <h2 class="big-cta-text">
+                <div class="mobile-only" style="margin-bottom: 1rem;"><img src="images/1.png" alt="" style="width: 250px; max-width: 100%; border-radius: 16px;"></div>
                 <span class="white"><span class="amb">В</span>ИЗУАЛ,</span><br>
-                <span class="accent" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.2em;">
-                    <img src="images/1.png" alt="" style="height: 0.85em; width: auto; border-radius: 0.15em;"> КОТОРЫЙ
+                <span class="accent cta-line-2" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.2em;">
+                    <img src="images/1.png" alt="" class="desktop-only" style="height: 0.85em; width: auto; border-radius: 0.15em;"> КОТОРЫЙ
                 </span><br>
-                <span class="white" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.2em;">
-                    ПРОДАЁТ <img src="images/2.png" alt="" style="height: 0.85em; width: auto; border-radius: 0.15em;">
+                <span class="white cta-line-3" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.2em;">
+                    ПРОДАЁТ <img src="images/2.png" alt="" class="desktop-only" style="height: 0.85em; width: auto; border-radius: 0.15em;">
                 </span>
+                <div class="mobile-only" style="margin-top: 1rem;"><img src="images/2.png" alt="" style="width: 250px; max-width: 100%; border-radius: 16px;"></div>
             </h2>
+
             <a href="projects.html" class="btn-v2 btn-v2-filled big">Смотреть кейсы →</a>
         </div>
     </section>
