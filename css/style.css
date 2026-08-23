@@ -317,7 +317,7 @@ main {
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
+    border-color: transparent;
 }
 
 .project-img {
@@ -372,7 +372,7 @@ main {
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
     font-size: 0.8rem;
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: none;
 }
 
 /* Experience/Resume Section */
@@ -515,7 +515,7 @@ footer {
     left: 20%;
     width: 300px;
     height: 300px;
-    background: var(--primary-color);
+    background: transparent;
 }
 
 .blob-blue {
@@ -900,3 +900,45 @@ nav {
 .logo {
     pointer-events: auto;  display: flex; align-items: center; max-height: 20px; }
 .logo img { max-height: 20px; width: auto; }
+/* Footer and Social Links */
+.site-footer {
+    padding: 3rem 5%;
+    text-align: center;
+    border: none;
+    margin-top: 4rem;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+
+
+
+
+.sprite-social {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/icons/icon_trans_white.png");
+    background-size: 180px 60px;
+    background-repeat: no-repeat;
+    border: none !important;
+    background-color: transparent !important;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.sprite-social:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(139,92,246,0.8)) brightness(1.2);
+}
+.sprite-tg { background-position: 0 0; }
+.sprite-vk { background-position: -60px 0; }
+.sprite-tt { background-position: -120px 0; }
