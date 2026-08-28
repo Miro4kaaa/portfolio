@@ -65,7 +65,11 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="Новое сообщение с портфолио!">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://brandianna.github.io/contact.html?success=true">
+                    <input type="hidden" name="_next" id="nextUrl" value="">
+                    <script>
+                        // Динамически вычисляем правильный URL для страницы успеха
+                        document.getElementById('nextUrl').value = window.location.href.split('?')[0].replace('contact.html', 'success.html');
+                    </script>
                     
                     <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Отправить</button>
                 </form>

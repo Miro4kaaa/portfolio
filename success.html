@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщение отправлено | Анна Логунова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Главная"></a>
+            
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Обо мне</a></li>
+                <li><a href="projects.html">Кейсы</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: calc(100vh - 250px); position: relative; overflow: hidden;">
+        <!-- Фоновые неоновые пятна -->
+        <div class="neon-blob blob-purple"></div>
+        <div class="neon-blob blob-blue"></div>
+
+        <div class="contact-container glass-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 4rem 2rem;">
+            <i class="bi bi-check-circle-fill" style="font-size: 5rem; color: #10b981; margin-bottom: 1.5rem; display: inline-block;"></i>
+            <h1 class="section-title-v2 light" style="text-align: center; margin-bottom: 1rem; position: relative; z-index: 10; padding:0; font-size: 2.5rem;">УСПЕШНО!</h1>
+            <p style="margin-bottom: 2.5rem; color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;">
+                Ваше сообщение было успешно отправлено.<br>Я свяжусь с вами в ближайшее время!
+            </p>
+            
+            <a href="index.html" class="btn btn-primary" style="display: inline-block; padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; border-radius: 8px;">Вернуться на главную</a>
+            <a href="projects.html" class="btn btn-outline" style="display: inline-block; padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; border-radius: 8px; margin-left: 1rem; border: 1px solid rgba(255,255,255,0.2); color: #fff;">Смотреть кейсы</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <footer class="site-footer" style="padding: 4rem 5% 2rem; text-align: center; border: none; margin-top: 2rem;">
+        <div class="social-links" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <a href="https://t.me/brandianna" target="_blank" aria-label="Telegram" class="sprite-social sprite-tg"></a>
+            <a href="https://vk.ru/brand_i_anna" target="_blank" aria-label="VKontakte" class="sprite-social sprite-vk"></a>
+            <a href="https://www.tiktok.com/@virdelia.ai" target="_blank" aria-label="TikTok" class="sprite-social sprite-tt"></a>
+        </div>
+        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">&copy; 2026 Анна Логунова. Создано с помощью AI-подхода.</p>
+    </footer>
+</body>
+</html>
