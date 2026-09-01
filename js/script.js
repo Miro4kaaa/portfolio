@@ -189,3 +189,73 @@ document.addEventListener("DOMContentLoaded", () => {
         seekVideos();
     }
 })();
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('hidden');
+        setTimeout(() => preloader.remove(), 500);
+    }
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const content = item.querySelector('.faq-content');
+        const toggle = item.querySelector('.faq-toggle');
+        const isOpen = content.style.display === 'block';
+        
+        document.querySelectorAll('.faq-content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+        
+        if (!isOpen) {
+            content.style.display = 'block';
+            toggle.textContent = '−';
+        }
+    });
+});
+
+// Back to Top
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Custom Cursor
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+if (cursorDot && cursorOutline && window.innerWidth >= 1024) {
+    window.addEventListener('mousemove', (e) => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+        
+        // Add a slight delay to the outline for a smooth effect
+        cursorOutline.animate({
+            left: `${e.clientX}px`,
+            top: `${e.clientY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    document.querySelectorAll('a, button, .faq-item').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.style.width = '60px';
+            cursorOutline.style.height = '60px';
+            cursorOutline.style.backgroundColor = 'rgba(139, 92, 246, 0.1)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorOutline.style.width = '40px';
+            cursorOutline.style.height = '40px';
+            cursorOutline.style.backgroundColor = 'transparent';
+        });
+    });
+}
