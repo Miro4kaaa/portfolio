@@ -1624,7 +1624,7 @@ textarea.contact-input {
   display: inline-block;
   width: 32px;
   height: 32px;
-  background-image: url('../images/icons/icon_trans_white.png');
+  background-image: url('../images/icons/icon_trans_white.webp');
   background-repeat: no-repeat;
   background-size: 300% 100%;
   opacity: 0.65;
