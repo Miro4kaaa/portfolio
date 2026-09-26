@@ -544,26 +544,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 14. MANIFESTO BACKGROUND VIDEO AUTOPLAY ASSURANCE
-    const manifestoVideo = document.querySelector('.manifesto-bg-video');
-    if (manifestoVideo) {
-        manifestoVideo.muted = true;
-        const playPromise = manifestoVideo.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                // Autoplay was prevented, retry on first interaction
-                const startPlay = () => {
-                    manifestoVideo.play();
-                    window.removeEventListener('scroll', startPlay);
-                    window.removeEventListener('click', startPlay);
-                    window.removeEventListener('touchstart', startPlay);
-                };
-                window.addEventListener('scroll', startPlay, { passive: true });
-                window.addEventListener('click', startPlay, { once: true });
-                window.addEventListener('touchstart', startPlay, { once: true });
-            });
+    // 14. BACKGROUND VIDEOS AUTOPLAY ASSURANCE (Hero & Manifesto)
+    const setupBgVideoAutoplay = (videoSelector) => {
+        const bgVideo = document.querySelector(videoSelector);
+        if (bgVideo) {
+            bgVideo.muted = true;
+            const playPromise = bgVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    const startPlay = () => {
+                        bgVideo.play().catch(() => {});
+                        window.removeEventListener('scroll', startPlay);
+                        window.removeEventListener('click', startPlay);
+                        window.removeEventListener('touchstart', startPlay);
+                    };
+                    window.addEventListener('scroll', startPlay, { passive: true });
+                    window.addEventListener('click', startPlay, { once: true });
+                    window.addEventListener('touchstart', startPlay, { once: true });
+                });
+            }
         }
-    }
+    };
+    setupBgVideoAutoplay('.hero-bg-video');
+    setupBgVideoAutoplay('.manifesto-bg-video');
 
     // 15. POSITION STAR OVER VIDEO WATERMARK IN MANIFESTO
     const positionWatermarkStar = () => {
