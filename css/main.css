@@ -2136,14 +2136,20 @@ textarea.contact-input {
 /* Video Grid (Case 2) */
 .case-video-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
   max-width: 1400px;
   margin: 0 auto 3rem;
   padding: 0 5%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .case-video-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
   .case-video-grid {
     grid-template-columns: repeat(3, 1fr);
   }
