@@ -2251,6 +2251,36 @@ textarea.contact-input {
   display: block;
 }
 
+/* Marketplace Video Covers (Case 2 - 3 items in a row) */
+.case-marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  padding: 0 5%;
+}
+
+.case-marketplace-card {
+  aspect-ratio: 3/4;
+}
+
+@media (max-width: 900px) {
+  .case-marketplace-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .case-marketplace-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Pinterest Masonry Grid (Case 5 - Graphic design) */
 .case-bento-grid {
   column-count: 3;
