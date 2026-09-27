@@ -890,6 +890,44 @@ a {
   overflow: hidden;
 }
 
+.services-heading {
+  margin-bottom: 1.5rem;
+}
+
+.services-lightning-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.services-lightning-badge {
+  position: absolute;
+  top: -28px;
+  right: -56px;
+  width: 44px;
+  height: 66px;
+  pointer-events: none;
+  z-index: 4;
+  animation: float-lightning-badge 5s ease-in-out infinite;
+}
+
+.services-lightning-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes float-lightning-badge {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 6px 12px rgba(232, 67, 42, 0.4));
+  }
+  50% {
+    transform: translateY(-8px) rotate(-3deg);
+    filter: drop-shadow(0 10px 20px rgba(232, 67, 42, 0.6));
+  }
+}
+
 .services-list {
   display: flex;
   flex-direction: column;
@@ -1727,6 +1765,13 @@ a {
   .process,
   .contact {
     padding: 4.5rem 0;
+  }
+
+  .services-lightning-badge {
+    top: -22px;
+    right: -34px;
+    width: 28px;
+    height: 42px;
   }
 
   .contact-grid {
