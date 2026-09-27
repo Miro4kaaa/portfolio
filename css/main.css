@@ -459,7 +459,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: var(--accent);
-  color: #0A0A0A !important;
+  color: #0A0A0A;
   font-family: var(--font-heading);
   font-weight: 800;
   padding: 1.1rem 2.2rem;
@@ -478,9 +478,29 @@ a {
 .hero-cta:focus,
 .hero-cta:active {
   background-color: var(--accent-hover);
-  color: #0A0A0A !important;
+  color: #0A0A0A;
   transform: translateY(-2px);
   box-shadow: none;
+}
+
+.hero-cta.hero-cta-outline,
+.hero-cta-outline {
+  background-color: transparent !important;
+  color: #A0A0AA !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+.hero-cta.hero-cta-outline:hover,
+.hero-cta.hero-cta-outline:focus,
+.hero-cta.hero-cta-outline:active,
+.hero-cta-outline:hover,
+.hero-cta-outline:focus,
+.hero-cta-outline:active {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #FFFFFF !important;
+  border-color: #555560 !important;
+  transform: translateY(-2px);
 }
 
 /* Кнопка в Hero сохраняет фирменное свечение */
@@ -990,8 +1010,8 @@ a {
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
   align-items: stretch;
 }
 
