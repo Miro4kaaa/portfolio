@@ -1238,6 +1238,49 @@ a {
   border-color: var(--accent);
 }
 
+.filter-chip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.6rem 1.35rem;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.filter-chip-tilda {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.filter-chip-tilda svg {
+  display: inline-block;
+  flex-shrink: 0;
+  stroke: var(--accent);
+  transition: transform 0.25s ease, stroke 0.25s ease;
+}
+
+.filter-chip-tilda:hover,
+.filter-chip-tilda:focus {
+  background: rgba(232, 67, 42, 0.12);
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.filter-chip-tilda:hover svg,
+.filter-chip-tilda:focus svg {
+  stroke: var(--accent-hover);
+  transform: translate(1px, -1px);
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
