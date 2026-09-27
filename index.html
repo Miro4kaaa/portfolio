@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Droid+Sans+Mono&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=15">
 </head>
 <body>
 
@@ -249,7 +249,7 @@
                     </div>
                 </div>
                 
-                <div class="reveal-right" style="display: flex; justify-content: flex-end; width: 100%;">
+                <div class="reveal-right">
                     <div class="about-image-card">
                         <img src="images/Girl_laughing.webp" alt="Анна Логунова" class="about-image">
                         <div class="floating-icon float-anim-1 about-heart-icon">
@@ -448,46 +448,35 @@
         </div>
         <div class="container">
             <div class="contact-grid">
-                <div class="reveal-left">
+                <div class="reveal-left contact-col-visual">
+                    <div class="contact-logo-frame">
+                        <picture>
+                            <source srcset="images/Inflate_pink_logo.webp" type="image/webp">
+                            <img src="images/Inflate_pink_logo.png" alt="brand AI anna 3D Logo" class="contact-logo-img" width="460" height="460" loading="lazy">
+                        </picture>
+                    </div>
+
+                    <div class="social-links contact-bracket-links">
+                        <a href="https://t.me/brandianna" target="_blank" rel="noopener noreferrer" class="social-link">Telegram &nearr;</a>
+                        <a href="mailto:brandianna@mail.ru" class="social-link">Email &nearr;</a>
+                        <a href="https://vk.ru/brand_i_anna" target="_blank" rel="noopener noreferrer" class="social-link">VKontakte &nearr;</a>
+                        <a href="https://www.tiktok.com/@virdelia.ai" target="_blank" rel="noopener noreferrer" class="social-link">TikTok &nearr;</a>
+                        <a href="https://www.behance.net/brandianna" target="_blank" rel="noopener noreferrer" class="social-link">Behance &nearr;</a>
+                    </div>
+                </div>
+
+                <div class="reveal-right contact-col-text">
                     <span class="section-eyebrow">Свяжитесь со&nbsp;мной</span>
                     <h2 class="contact-heading">ДАВАЙТЕ<br>РАБОТАТЬ<br><span style="color: var(--accent);">ВМЕСТЕ</span></h2>
                     
-                    <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 450px;">
-                        Готова обсудить задачи по&nbsp;AI-генерациям, карточкам товаров для&nbsp;маркетплейсов или рекламным видео-креативам. Напишите мне в&nbsp;удобном мессенджере или отправьте заявку через форму.
+                    <p class="contact-description">
+                        Готова обсудить задачи по&nbsp;AI-генерациям, карточкам товаров для&nbsp;маркетплейсов или рекламным видео-креативам. Напишите мне в&nbsp;Telegram или на&nbsp;почту&nbsp;— отвечу в&nbsp;ближайшее время.
                     </p>
-                    
-                    <div class="social-links">
-                        <a href="https://t.me/brandianna" target="_blank" rel="noopener noreferrer" class="social-link">Telegram &nearr;</a>
-                        <a href="https://vk.ru/brand_i_anna" target="_blank" rel="noopener noreferrer" class="social-link">VKontakte &nearr;</a>
-                        <a href="https://www.tiktok.com/@virdelia.ai" target="_blank" rel="noopener noreferrer" class="social-link">TikTok &nearr;</a>
-                        <a href="mailto:brandianna@mail.ru" class="social-link">Email &nearr;</a>
+
+                    <div class="contact-status-badge">
+                        <span class="status-pulse-dot"></span>
+                        <span>Доступна для новых проектов</span>
                     </div>
-                </div>
-                
-                <div class="reveal-right">
-                    <form class="contact-form" action="https://formsubmit.co/brandianna@mail.ru" method="POST">
-                        <!-- FormSubmit configurations -->
-                        <input type="hidden" name="_subject" value="Новая заявка с сайта-портфолио brand AI anna!">
-                        <input type="hidden" name="_next" value="success.html">
-                        <input type="hidden" name="_captcha" value="false">
-                        
-                        <div>
-                            <label for="name" style="display:block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Ваше имя</label>
-                            <input type="text" id="name" name="name" class="contact-input" placeholder="Иван Иванов" required>
-                        </div>
-                        
-                        <div>
-                            <label for="email" style="display:block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Email или Telegram</label>
-                            <input type="text" id="email" name="contact" class="contact-input" placeholder="example@mail.ru или @username" required>
-                        </div>
-                        
-                        <div>
-                            <label for="task" style="display:block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Описание задачи</label>
-                            <textarea id="task" name="message" class="contact-input" placeholder="Расскажите о вашем проекте, бренде или необходимых задачах..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="hero-cta" style="margin-bottom: 0; width: 100%; justify-content: center; padding: 1.2rem;">Отправить сообщение &rarr;</button>
-                    </form>
                 </div>
             </div>
         </div>
