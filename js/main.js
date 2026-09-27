@@ -467,43 +467,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 11. CONTACT FORM
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        const successRedirect = contactForm.querySelector('input[name="_next"]');
-        if (successRedirect) {
-            successRedirect.value = new URL('success.html', window.location.href).href;
-        }
-
-        contactForm.addEventListener('submit', (e) => {
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            let isValid = true;
-
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('error');
-                } else {
-                    field.classList.remove('error');
-                }
-            });
-
-            if (!isValid) {
-                e.preventDefault();
-                alert('Пожалуйста, заполните все обязательные поля.');
-                return;
-            }
-
-            // Visual feedback upon successful submission
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.textContent = 'Отправка...';
-                submitBtn.disabled = true;
-                submitBtn.style.opacity = '0.7';
-                submitBtn.style.cursor = 'not-allowed';
-            }
-        });
-    }
 
     // 13. SERVICE ITEM HOVER
     const serviceItems = document.querySelectorAll('.service-item');
