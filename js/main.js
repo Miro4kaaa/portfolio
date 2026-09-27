@@ -370,12 +370,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (videoModal && modalVideo) {
         document.querySelectorAll('.case-video-card, .case-banner-card, .video-wrapper').forEach(card => {
-            card.addEventListener('click', () => {
+            card.addEventListener('click', (e) => {
                 const vid = card.querySelector('video');
                 if (vid && vid.src) {
+                    modalVideo.pause();
+                    modalVideo.removeAttribute('src');
+                    modalVideo.load();
+
                     modalVideo.src = vid.src;
+                    modalVideo.currentTime = 0;
+                    modalVideo.load();
                     videoModal.classList.add('active');
-                    modalVideo.play().catch(() => {});
+
+                    // Handle autoplay on mobile (iOS Safari / Android Chrome)
+                    const playPromise = modalVideo.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch((err) => {
+                            console.warn('Autoplay with sound blocked or deferred:', err);
+                            // If sound is blocked by policy, start muted and allow user to unmute via native controls
+                            modalVideo.muted = true;
+                            modalVideo.play().catch(() => {});
+                        });
+                    }
                 }
             });
         });
