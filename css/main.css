@@ -2143,6 +2143,10 @@ textarea.contact-input {
   padding: 0 5%;
 }
 
+.case-virdeliya-grid {
+  padding: 0;
+}
+
 @media (max-width: 1200px) {
   .case-video-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -2158,13 +2162,17 @@ textarea.contact-input {
 @media (max-width: 768px) {
   .case-video-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 1.25rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .case-video-grid {
     grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
   }
 }
 
@@ -2278,12 +2286,13 @@ textarea.contact-input {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
   .case-marketplace-grid {
     grid-template-columns: 1fr;
     max-width: 380px;
     margin-left: auto;
     margin-right: auto;
+    gap: 1.5rem;
   }
 }
 
