@@ -2418,7 +2418,7 @@ a {
   color: var(--accent);
 }
 
-/* Long landing showcase (Cases 1, 3, 4) */
+/* Long landing showcase (Cases 1, 3, 4, 7, 8) - Seamless continuous canvas */
 .case-showcase-column {
   max-width: 1400px;
   margin: 0 auto 4rem;
@@ -2432,14 +2432,17 @@ a {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   cursor: zoom-in;
-  transition: opacity 0.2s ease, filter 0.2s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  transition: opacity 0.2s ease;
 }
 
 .case-showcase-column img:hover {
-  filter: brightness(1.03);
+  filter: none;
 }
 
 /* Video Grid (Case 2) */
