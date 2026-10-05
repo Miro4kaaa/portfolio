@@ -239,15 +239,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const filterValue = btn.getAttribute('data-filter');
 
+                let visibleCount = 0;
                 portfolioItems.forEach(item => {
                     const itemCategory = item.getAttribute('data-category');
                     
                     if (filterValue === 'all' || filterValue === itemCategory) {
                         item.classList.remove('hidden');
+                        visibleCount++;
                     } else {
                         item.classList.add('hidden');
                     }
                 });
+
+                const emptyState = document.querySelector('.portfolio-empty-state');
+                if (emptyState) {
+                    if (visibleCount === 0) {
+                        emptyState.classList.remove('hidden');
+                    } else {
+                        emptyState.classList.add('hidden');
+                    }
+                }
             });
         });
     }
