@@ -558,6 +558,25 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBgVideoAutoplay('.hero-bg-video');
     setupBgVideoAutoplay('.manifesto-bg-video');
 
+    // Portfolio grid videos autoplay assurance
+    document.querySelectorAll('.portfolio-item video').forEach(v => {
+        v.muted = true;
+        const playPromise = v.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                const startPlay = () => {
+                    v.play().catch(() => {});
+                    window.removeEventListener('scroll', startPlay);
+                    window.removeEventListener('click', startPlay);
+                    window.removeEventListener('touchstart', startPlay);
+                };
+                window.addEventListener('scroll', startPlay, { passive: true, once: true });
+                window.addEventListener('click', startPlay, { once: true });
+                window.addEventListener('touchstart', startPlay, { once: true });
+            });
+        }
+    });
+
     // 15. POSITION STAR OVER VIDEO WATERMARK IN MANIFESTO
     const positionWatermarkStar = () => {
         const section = document.getElementById('clip') || document.getElementById('manifesto') || document.querySelector('.manifesto');
