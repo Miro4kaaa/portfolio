@@ -1396,10 +1396,7 @@ a {
 }
 
 .portfolio-category {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--accent);
-  margin-bottom: 0.8rem;
+  display: none !important;
 }
 
 .portfolio-action {
@@ -2443,6 +2440,24 @@ a {
 
 .case-showcase-column img:hover {
   filter: none;
+}
+
+.case-showcase-video-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3rem;
+}
+
+.case-showcase-video-wrapper video {
+  max-height: 1000px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
 /* Video Grid (Case 2) */
