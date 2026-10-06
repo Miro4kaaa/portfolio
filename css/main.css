@@ -51,7 +51,7 @@ input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p {
   overflow-wrap: break-word;
 }
 
@@ -60,6 +60,10 @@ h1, h2, h3, h4, h5, h6, .section-heading, .hero-heading, .manifesto-heading, .po
   font-weight: 700;
   text-wrap: balance;
   letter-spacing: -0.02em;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 ul, ol {
@@ -951,6 +955,8 @@ a {
   position: relative;
   gap: 1.5rem;
   text-decoration: none;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .service-item:first-child {
@@ -962,6 +968,7 @@ a {
   align-items: center;
   gap: 1.5rem;
   flex: 1;
+  min-width: 0;
 }
 
 .service-item .service-number {
@@ -971,25 +978,20 @@ a {
   opacity: 0.85;
   transition: transform 0.3s ease, opacity 0.3s ease;
   min-width: 45px;
+  flex-shrink: 0;
 }
 
 .service-title {
   letter-spacing: -0.05em;
   transition: color 0.3s ease, transform 0.3s ease;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .service-item:hover {
   border-bottom-color: rgba(232, 67, 42, 0.4);
-}
-
-.service-item:hover .service-title {
-  color: var(--accent);
-  transform: translateX(8px);
-}
-
-.service-item:hover .service-number {
-  transform: scale(1.1);
-  opacity: 1;
 }
 
 .service-preview-thumb {
@@ -1012,28 +1014,71 @@ a {
   transition: transform 0.4s ease;
 }
 
-.service-item:hover .service-preview-thumb {
-  transform: scale(1.12);
-  border-color: var(--accent);
-  box-shadow: 0 6px 20px rgba(232, 67, 42, 0.35);
-}
+@media (hover: hover) and (pointer: fine) {
+  .service-item:hover .service-title {
+    color: var(--accent);
+    transform: translateX(8px);
+  }
 
-.service-item:hover .service-preview-thumb img,
-.service-item:hover .service-preview-thumb video {
-  transform: scale(1.08);
+  .service-item:hover .service-number {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  .service-item:hover .service-preview-thumb {
+    transform: scale(1.12);
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(232, 67, 42, 0.35);
+  }
+
+  .service-item:hover .service-preview-thumb img,
+  .service-item:hover .service-preview-thumb video {
+    transform: scale(1.08);
+  }
 }
 
 @media (max-width: 768px) {
   .service-item {
-    font-size: 1.15rem;
-    padding: 1rem 0;
+    font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+    padding: 0.95rem 0;
+    gap: 0.75rem;
   }
   .service-left {
-    gap: 0.8rem;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .service-item .service-number {
+    min-width: 32px;
+    font-size: 0.88rem;
+  }
+  .service-title {
+    letter-spacing: -0.02em;
   }
   .service-preview-thumb {
-    width: 65px;
-    height: 45px;
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    font-size: clamp(0.82rem, 3.3vw, 0.96rem);
+    padding: 0.85rem 0;
+    gap: 0.5rem;
+  }
+  .service-left {
+    gap: 0.5rem;
+  }
+  .service-item .service-number {
+    min-width: 26px;
+    font-size: 0.78rem;
+  }
+  .service-preview-thumb {
+    width: 52px;
+    height: 35px;
+    border-radius: 6px;
   }
 }
 
@@ -2365,11 +2410,15 @@ a {
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(2.2rem, 5.5vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  line-height: 1.08;
   color: var(--text);
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .case-hero-desc {
@@ -2487,6 +2536,11 @@ a {
 }
 
 @media (max-width: 768px) {
+  .case-hero-heading {
+    font-size: clamp(1.35rem, 5.8vw, 2.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
   .case-video-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -2494,6 +2548,10 @@ a {
 }
 
 @media (max-width: 640px) {
+  .case-hero-heading {
+    font-size: clamp(1.2rem, 5.2vw, 1.65rem);
+    line-height: 1.15;
+  }
   .case-video-grid {
     grid-template-columns: 1fr;
     max-width: 380px;
