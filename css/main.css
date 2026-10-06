@@ -1283,6 +1283,26 @@ a {
   border-color: var(--accent);
 }
 
+.filter-btn[data-filter="vibecoding"] {
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.filter-btn[data-filter="vibecoding"]:hover {
+  border-color: #38BDF8;
+  color: #ffffff;
+  background: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+.filter-btn[data-filter="vibecoding"].active {
+  background-color: #38BDF8;
+  color: #050a0e;
+  border-color: #38BDF8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+}
+
 .filter-chip-link {
   display: inline-flex;
   align-items: center;
