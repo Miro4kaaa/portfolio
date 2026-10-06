@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FitnessCode — Мобильное приложение (Вайбкодинг) | brand AI anna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--a:#FF45A6;--bg:#0a0508}
+body.m{--a:#38BDF8;--bg:#050a0e}
+*{box-sizing:border-box}
+body{margin:0;background:#05070a;color:#fff;font-family:'Montserrat',-apple-system,"Segoe UI",sans-serif;min-height:100vh;text-wrap:pretty}
+.top-bar{display:flex;align-items:center;justify-content:flex-start;padding:18px 24px;max-width:1300px;margin:0 auto;position:relative;z-index:10;gap:16px;flex-wrap:wrap}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#cbb8c2;text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .25s ease}
+.back-link:hover{color:#fff;background:rgba(255,255,255,.14);transform:translateX(-3px);border-color:var(--a)}
+.bg-img{position:fixed;inset:0;z-index:-2;pointer-events:none;transition:opacity .6s cubic-bezier(0.4, 0, 0.2, 1);will-change:opacity}
+.bg-f{background:url('Woman_pulling_lat.jpg') left top / cover no-repeat;filter:brightness(0.18);opacity:1}
+.bg-m{background:url('Muscular_man.jpg') -150px top / cover no-repeat;filter:brightness(0.15);opacity:0}
+body.m .bg-f{opacity:0}
+body.m .bg-m{opacity:1}
+.bg-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;transition:opacity .6s cubic-bezier(0.4, 0, 0.2, 1);will-change:opacity}
+.bg-ov-f{background:radial-gradient(1000px 600px at 50% 0%,color-mix(in srgb,#FF45A6 22%,transparent),transparent 75%);opacity:1}
+.bg-ov-m{background:radial-gradient(1000px 600px at 50% 0%,color-mix(in srgb,#38BDF8 22%,transparent),transparent 75%);opacity:0}
+body.m .bg-ov-f{opacity:0}
+body.m .bg-ov-m{opacity:1}
+header{text-align:center;padding:24px 20px 0}
+h1{margin:0;font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:-1px;display:flex;align-items:baseline;justify-content:center;gap:18px;flex-wrap:wrap;line-height:1}
+.lg{height:clamp(42px,7vw,70px);width:auto;display:inline-block;align-self:center;margin-right:-10px;transform:translateY(-.1em)}
+h1 span{background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;color:transparent;line-height:1}
+.tagline{font-size:clamp(16px,2.4vw,22px);font-weight:400;color:#fff;letter-spacing:.3px;opacity:.95;white-space:nowrap;line-height:1;margin-left:8px}
+.sw{display:inline-flex;margin-top:22px;padding:4px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}
+.sw button{border:0;background:none;color:#cbbcc4;padding:10px 22px;border-radius:999px;font:700 14px inherit;font-family:inherit;cursor:pointer}
+.sw button.on{background:var(--a);color:#fff}
+.row{display:flex;gap:48px;overflow-x:auto;padding:36px max(24px,calc((100vw - 1100px) / 2 + 24px)) 36px max(40px,calc(50vw - 145px));margin-top:0;scrollbar-width:thin}
+.item{flex:none;text-align:center}
+@media(hover:none) and (pointer:coarse){.row{scroll-snap-type:x proximity}.item{scroll-snap-align:center}}
+.phone{width:min(290px,80vw);aspect-ratio:576/1222;border-radius:46px;padding:10px;background:linear-gradient(145deg,#3a3a40,#0d0d10 45%,#2a2a30);box-shadow:0 0 0 2px #111,0 40px 80px rgba(0,0,0,.6),0 0 80px color-mix(in srgb,var(--a) 24%,transparent);position:relative;transition:transform .4s, box-shadow .6s}
+.item:hover .phone{transform:translateY(-10px) scale(1.02)}
+.phone::after{content:"";position:absolute;right:-3px;top:130px;width:3px;height:60px;background:#222;border-radius:0 3px 3px 0}
+.scr{width:100%;height:100%;border-radius:37px;overflow:hidden;background:#000}
+.scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cap{margin-top:20px;font-weight:800;font-size:15px;letter-spacing:.5px;color:#e8d8e0;text-wrap:pretty}
+.about{max-width:1100px;margin:0 auto;padding:10px 24px 90px}
+.about h2{font-size:clamp(26px,4vw,38px);font-weight:900;margin:56px 0 8px;letter-spacing:-.5px;text-wrap:pretty}
+.about h2 span{color:var(--a)}
+.about>p{color:#cbb8c2;line-height:1.7;font-size:16px;max-width:100%;text-align:justify;text-align-last:left;margin:0 0 26px;text-wrap:pretty}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.c{background:rgba(10,14,20,.7);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.c i{font-style:normal;display:flex;width:42px;height:42px;border-radius:12px;align-items:center;justify-content:center;margin-bottom:14px;background:color-mix(in srgb,var(--a) 16%,transparent);color:var(--a);flex-shrink:0}
+.c i svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.c b{display:block;font-size:17px;margin-bottom:8px;text-wrap:pretty}
+.c p{margin:0;color:#bfaab5;line-height:1.6;font-size:14.5px;text-wrap:pretty}
+.cmp{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px;background:rgba(10,14,20,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;overflow:hidden}
+.cmp td{padding:16px 14px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;line-height:1.55;text-wrap:pretty}
+.cmp td:first-child{width:30%;font-weight:800}
+.cmp td:nth-child(2){color:#9d8a94;width:30%}
+.cmp td:last-child{color:#fff}
+.cmp th{text-align:left;padding:8px 14px;font-size:12px;letter-spacing:1.4px;color:var(--a)}
+body:not(.m) .for-m{display:none}
+body.m .for-f{display:none}
+@media(max-width:700px){.cmp td:first-child,.cmp td:nth-child(2){width:auto}.top-bar{padding:14px 16px}}
+</style>
+</head>
+<body>
+<div class="bg-img bg-f"></div>
+<div class="bg-img bg-m"></div>
+<div class="bg-overlay bg-ov-f"></div>
+<div class="bg-overlay bg-ov-m"></div>
+<nav class="top-bar">
+  <a href="../index.html#portfolio" class="back-link">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <span>Вернуться в портфолио</span>
+  </a>
+</nav>
+<header>
+  <h1><img class="lg" src="logo.png" alt=""><span>FitnessCode</span><span class="tagline" id="tagline">Мое&nbsp;личное приложение</span></h1>
+  <div class="sw"><button class="on" data-g="f">Женский режим</button><button data-g="m">Мужской режим</button></div>
+</header>
+<div class="row" id="row"></div>
+<section class="about">
+<h2>Какие задачи <span>решает приложение</span></h2>
+<p>FitnessCode собирает в&nbsp;одном месте всё, что&nbsp;обычно приходится вести в&nbsp;пяти разных приложениях: тренировки, питание, воду, замеры тела и&nbsp;самочувствие. Цель одна: чтобы человек регулярно занимался и&nbsp;видел свой прогресс без&nbsp;лишних действий.</p>
+<div class="g">
+<div class="c"><i><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></i><b>Планирование</b><p>План недели на&nbsp;главном экране: на&nbsp;каждый день можно записать активность и&nbsp;отметить её&nbsp;выполненной. Всегда видно, что&nbsp;делать сегодня.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><path d="M6 4v16M18 4v16M2 8v8M22 8v8M6 12h12"/></svg></i><b>Тренировки без&nbsp;блокнота</b><p>Каталог готовых программ и&nbsp;свои программы. В&nbsp;тренировке подходы, веса и&nbsp;повторы отмечаются одной галочкой, таймер отдыха и&nbsp;калории считаются сами, прошлые результаты подсказывают нагрузку.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></i><b>Повтор в&nbsp;один тап</b><p>Последняя тренировка вынесена на&nbsp;главный экран: её&nbsp;можно запустить повторно сразу, без&nbsp;поиска по&nbsp;меню.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg></i><b>Питание и&nbsp;калории</b><p>Дневник питания, суточная норма по&nbsp;росту, весу, возрасту и&nbsp;цели, разбивка по&nbsp;белкам, жирам и&nbsp;углеводам.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></i><b>Водный баланс</b><p>Дневная норма воды и&nbsp;быстрые кнопки +250 и&nbsp;+500&nbsp;мл прямо на&nbsp;главном экране.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><path d="M21.3 15.3 8.7 2.7a2.4 2.4 0 0 0-3.4 0L2.7 5.3a2.4 2.4 0 0 0 0 3.4l12.6 12.6a2.4 2.4 0 0 0 3.4 0l2.6-2.6a2.4 2.4 0 0 0 0-3.4Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/></svg></i><b>Прогресс тела</b><p>Замеры груди, талии, бёдер и&nbsp;других параметров, ИМТ, история и&nbsp;фото «до&nbsp;и&nbsp;после» с&nbsp;защитой ПИН-кодом.</p></div>
+<div class="c for-f"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a4 4 0 0 0-4 4c0 3 4 5 4 5s4-2 4-5a4 4 0 0 0-4-4Z"/><path d="M12 22a4 4 0 0 0 4-4c0-3-4-5-4-5s-4 2-4 5a4 4 0 0 0 4 4Z"/><path d="M2 12a4 4 0 0 0 4 4c3 0 5-4 5-4s-2-4-5-4a4 4 0 0 0-4 4Z"/><path d="M22 12a4 4 0 0 0-4-4c-3 0-5 4-5 4s2 4 5 4a4 4 0 0 0 4-4Z"/></svg></i><b>Женский цикл</b><p>Календарь фаз цикла и&nbsp;подсказка, когда ждать начало периода.</p></div>
+<div class="c for-m"><i><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></i><b>Силовой прогресс</b><p>История рабочих весов, расчёт тоннажа каждой тренировки и&nbsp;рост силовых показателей от&nbsp;тренировки к&nbsp;тренировке.</p></div>
+<div class="c"><i><svg viewBox="0 0 24 24"><rect x="6" y="7" width="12" height="10" rx="3"/><polyline points="12 10 12 12 14 12"/><path d="M9 7V3h6v4"/><path d="M9 17v4h6v-4"/></svg></i><b>Данные с&nbsp;часов</b><p>Шаги, калории и&nbsp;пульс подтягиваются из&nbsp;Health Connect и&nbsp;«Huawei Здоровье» без&nbsp;ручного ввода.</p></div>
+</div>
+
+<h2>Чем&nbsp;<span>отличается от&nbsp;других приложений</span></h2>
+<p>Мы не&nbsp;пытались сделать «ещё один трекер». Ниже то,&nbsp;что в&nbsp;FitnessCode сделано иначе.</p>
+<table class="cmp">
+<tr><th></th><th>ЧТО&nbsp;ЧАСТО ВСТРЕЧАЕТСЯ</th><th>FITNESSCODE</th></tr>
+<tr><td>Всё в&nbsp;одном месте</td><td>Отдельные приложения для&nbsp;тренировок, еды, воды <span class="for-f">и&nbsp;цикла</span><span class="for-m">и&nbsp;замеров</span></td><td>Тренировки, питание, вода, замеры <span class="for-f">и&nbsp;цикл</span><span class="for-m">и&nbsp;силовой прогресс</span> в&nbsp;одном приложении с&nbsp;единой историей</td></tr>
+<tr><td>Конфиденциальность</td><td>Аккаунт, облако, передача данных на&nbsp;сервер</td><td>Работает офлайн, данные хранятся на&nbsp;телефоне. Фото прогресса можно закрыть ПИН-кодом</td></tr>
+<tr><td>Скорость тренировки</td><td>Много полей и&nbsp;экранов, ввод занимает время</td><td>Один тап на&nbsp;подход, предзаполненные значения из&nbsp;прошлой тренировки, повтор последней тренировки с&nbsp;главного экрана</td></tr>
+<tr><td>Реклама и&nbsp;подписки</td><td>Платные функции, баннеры, навязчивые предложения</td><td>Без&nbsp;рекламы и&nbsp;без&nbsp;регистрации</td></tr>
+<tr><td>Персонализация</td><td>Один универсальный интерфейс для&nbsp;всех</td><td>Женский и&nbsp;мужской режимы со&nbsp;своим стилем, фото и&nbsp;набором разделов</td></tr>
+<tr><td>Планирование</td><td>Только история уже сделанного</td><td>План на&nbsp;каждый день недели прямо на&nbsp;главной, а&nbsp;не&nbsp;только журнал выполненного</td></tr>
+<tr><td>Часы и&nbsp;здоровье</td><td>Нужно вручную переносить шаги и&nbsp;пульс</td><td>Автоматический импорт из&nbsp;Health Connect и&nbsp;«Huawei Здоровье»</td></tr>
+<tr><td>Внешний вид</td><td>Перегруженные экраны</td><td>Тёмный спокойный интерфейс, крупные элементы, главное действие всегда под&nbsp;рукой</td></tr>
+</table>
+</section>
+<script>
+var S={f:[['Главная'],['План недели и&nbsp;последняя тренировка'],['Программа тренировки'],['Выполнение тренировки'],['Тренировки'],['Питание'],['Цикл'],['Профиль'],['Замеры тела']],m:[['Главная'],['План недели и&nbsp;последняя тренировка'],['Программа тренировки'],['Выполнение тренировки'],['Итоги тренировки'],['Тренировки'],['Питание'],['Профиль'],['Замеры тела']]};
+var row=document.getElementById('row');
+function draw(g){
+  document.body.classList.toggle('m',g=='m');
+  var tg = document.getElementById('tagline');
+  if(tg) tg.innerHTML = (g == 'm' ? 'Мое&nbsp;приложение для&nbsp;друзей' : 'Мое&nbsp;личное приложение');
+  row.innerHTML=S[g].map(function(s,i){return '<div class="item"><div class="phone"><div class="scr"><img src="screens/'+g+(i+1)+'.jpg" alt="'+s[0]+'"></div></div><div class="cap">'+s[0]+'</div></div>'}).join('');
+  row.scrollLeft = 0;
+}
+document.querySelectorAll('.sw button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.sw button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');draw(b.dataset.g)}});
+draw('f');
+
+// Two-phase scroll: First scroll vertically down to frame phone mockups completely, then horizontally to the end, then vertical scroll to about section
+(function() {
+  function getTargetY() {
+    var r = document.getElementById('row');
+    if (!r) return 0;
+    var rect = r.getBoundingClientRect();
+    var currentY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var rowBottom = currentY + rect.top + r.offsetHeight;
+    var vh = window.innerHeight || 800;
+    return Math.max(0, (rowBottom + 24) - vh);
+  }
+
+  function handleWheel(e) {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // Allow native trackpad horizontal swipe
+
+    var maxScroll = row.scrollWidth - row.clientWidth;
+    if (maxScroll <= 0) return;
+
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var targetY = getTargetY();
+
+    // Scrolling down (deltaY > 0)
+    if (e.deltaY > 0) {
+      // Phase 1: bring row and phone bottom into full view
+      if (scrollY < targetY - 6) {
+        e.preventDefault();
+        window.scrollTo(0, Math.min(targetY, scrollY + e.deltaY));
+        return;
+      }
+      // Phase 2: horizontal scroll through phone screens until end
+      if (row.scrollLeft < maxScroll - 2) {
+        e.preventDefault();
+        if (Math.abs(scrollY - targetY) > 6) window.scrollTo(0, targetY);
+        var delta = e.deltaY * 1.25;
+        row.scrollLeft = Math.min(maxScroll, row.scrollLeft + delta);
+        return;
+      }
+      // Phase 3: row is at the end, normal vertical scroll continues naturally into .about
+    } 
+    // Scrolling up (deltaY < 0)
+    else if (e.deltaY < 0) {
+      // If we are deep down in .about, let vertical scroll go up until gallery is back in view
+      if (scrollY > targetY + 15) return;
+
+      // Phase 2 reverse: horizontal scroll back to the first screen
+      if (row.scrollLeft > 2) {
+        e.preventDefault();
+        if (Math.abs(scrollY - targetY) > 6) window.scrollTo(0, targetY);
+        var delta = e.deltaY * 1.25;
+        row.scrollLeft = Math.max(0, row.scrollLeft + delta);
+        return;
+      }
+
+      // Phase 1 reverse: scroll back up to page top (scrollY = 0)
+      if (scrollY > 0) {
+        e.preventDefault();
+        window.scrollTo(0, Math.max(0, scrollY + e.deltaY));
+        return;
+      }
+    }
+  }
+
+  window.addEventListener('wheel', handleWheel, { passive: false });
+})();
+</script>
+</body>
+</html>
