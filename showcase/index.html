@@ -11,6 +11,7 @@
 :root{--a:#FF45A6;--bg:#0a0508}
 body.m{--a:#38BDF8;--bg:#050a0e}
 *{box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
 body{margin:0;background:#05070a;color:#fff;font-family:'Montserrat',-apple-system,"Segoe UI",sans-serif;min-height:100vh;text-wrap:pretty}
 .top-bar{display:flex;align-items:center;justify-content:flex-start;padding:18px 24px;max-width:1300px;margin:0 auto;position:relative;z-index:10;gap:16px;flex-wrap:wrap}
 .back-link{display:inline-flex;align-items:center;gap:8px;color:#cbb8c2;text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .25s ease}
@@ -26,16 +27,17 @@ body.m .bg-m{opacity:1}
 body.m .bg-ov-f{opacity:0}
 body.m .bg-ov-m{opacity:1}
 header{text-align:center;padding:24px 20px 0}
-h1{margin:0;font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:-1px;display:flex;align-items:baseline;justify-content:center;gap:18px;flex-wrap:wrap;line-height:1}
-.lg{height:clamp(42px,7vw,70px);width:auto;display:inline-block;align-self:center;margin-right:-10px;transform:translateY(-.1em)}
-h1 span{background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;color:transparent;line-height:1}
-.tagline{font-size:clamp(16px,2.4vw,22px);font-weight:400;color:#fff;letter-spacing:.3px;opacity:.95;white-space:nowrap;line-height:1;margin-left:8px}
+h1{margin:0;font-size:clamp(32px,5.5vw,60px);font-weight:900;letter-spacing:-1px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;line-height:1}
+.brand-title{display:inline-flex;align-items:center;gap:12px}
+.lg{height:clamp(40px,6.5vw,66px);width:auto;display:inline-block;align-self:center;transform:translateY(-.08em)}
+h1 span.title-text{background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;color:transparent;line-height:1}
+.tagline{font-size:clamp(15px,2.2vw,20px);font-weight:400;color:#fff;letter-spacing:.3px;opacity:.95;line-height:1.3}
 .sw{display:inline-flex;margin-top:22px;padding:4px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}
-.sw button{border:0;background:none;color:#cbbcc4;padding:10px 22px;border-radius:999px;font:700 14px inherit;font-family:inherit;cursor:pointer}
+.sw button{border:0;background:none;color:#cbbcc4;padding:10px 22px;border-radius:999px;font:700 14px inherit;font-family:inherit;cursor:pointer;transition:background .25s, color .25s}
 .sw button.on{background:var(--a);color:#fff}
 .row{display:flex;gap:48px;overflow-x:auto;padding:36px max(24px,calc((100vw - 1100px) / 2 + 24px)) 36px max(40px,calc(50vw - 145px));margin-top:0;scrollbar-width:thin}
 .item{flex:none;text-align:center}
-@media(hover:none) and (pointer:coarse){.row{scroll-snap-type:x proximity}.item{scroll-snap-align:center}}
+@media(hover:none) and (pointer:coarse) and (min-width: 769px){.row{scroll-snap-type:x proximity}.item{scroll-snap-align:center}}
 .phone{width:min(290px,80vw);aspect-ratio:576/1222;border-radius:46px;padding:10px;background:linear-gradient(145deg,#3a3a40,#0d0d10 45%,#2a2a30);box-shadow:0 0 0 2px #111,0 40px 80px rgba(0,0,0,.6),0 0 80px color-mix(in srgb,var(--a) 24%,transparent);position:relative;transition:transform .4s, box-shadow .6s}
 .item:hover .phone{transform:translateY(-10px) scale(1.02)}
 .phone::after{content:"";position:absolute;right:-3px;top:130px;width:3px;height:60px;background:#222;border-radius:0 3px 3px 0}
@@ -52,15 +54,59 @@ h1 span{background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:
 .c i svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .c b{display:block;font-size:17px;margin-bottom:8px;text-wrap:pretty}
 .c p{margin:0;color:#bfaab5;line-height:1.6;font-size:14.5px;text-wrap:pretty}
-.cmp{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px;background:rgba(10,14,20,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;overflow:hidden}
-.cmp td{padding:16px 14px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;line-height:1.55;text-wrap:pretty}
-.cmp td:first-child{width:30%;font-weight:800}
-.cmp td:nth-child(2){color:#9d8a94;width:30%}
-.cmp td:last-child{color:#fff}
-.cmp th{text-align:left;padding:8px 14px;font-size:12px;letter-spacing:1.4px;color:var(--a)}
+
+/* Comparison section styling */
+.cmp-box{margin-top:18px;border-radius:20px;overflow:hidden;background:rgba(10,14,20,.6);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.cmp-head{display:grid;grid-template-columns:26% 36% 38%;padding:14px 20px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08);font-size:11.5px;font-weight:800;letter-spacing:1.2px;color:#8f828a}
+.cmp-head div:last-child{color:var(--a)}
+.cmp-card{display:grid;grid-template-columns:26% 36% 38%;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.07);align-items:start;gap:16px;font-size:14.5px;line-height:1.55}
+.cmp-card:last-child{border-bottom:none}
+.cmp-col-feature b{color:#fff;font-size:15px;font-weight:700}
+.cmp-col-other p{margin:0;color:#9d8a94}
+.cmp-badge-other{display:none}
+.cmp-col-fc{color:#fff}
+.cmp-col-fc p{margin:0}
+.cmp-badge-fc{display:none}
+
 body:not(.m) .for-m{display:none}
 body.m .for-f{display:none}
-@media(max-width:700px){.cmp td:first-child,.cmp td:nth-child(2){width:auto}.top-bar{padding:14px 16px}}
+
+/* Mobile responsive styles */
+@media(max-width:768px){
+  .top-bar{padding:12px 16px}
+  header{padding:14px 14px 0}
+  h1{flex-direction:column;gap:8px;align-items:center}
+  .brand-title{font-size:clamp(26px,7.5vw,34px);gap:10px}
+  .lg{height:34px;transform:none}
+  .tagline{font-size:14px;white-space:normal;text-align:center;line-height:1.35;color:#e2d3dc}
+  .sw{width:100%;max-width:320px;display:flex;margin-top:16px}
+  .sw button{flex:1;padding:9px 12px;font-size:13px;white-space:nowrap;text-align:center}
+  
+  /* Vertical screenshots flow */
+  .row{flex-direction:column;align-items:center;gap:36px;padding:24px 16px 40px;overflow-x:visible;overflow-y:visible;max-width:100%}
+  .item{width:100%;max-width:290px;display:flex;flex-direction:column;align-items:center}
+  .phone{width:min(290px,82vw);aspect-ratio:576/1222}
+  .cap{margin-top:14px;font-size:14.5px;text-align:center}
+
+  .about{padding:10px 16px 70px}
+  .about h2{font-size:24px;margin:36px 0 10px}
+  .about>p{font-size:14.5px;line-height:1.6;margin:0 0 20px;text-align:left}
+  .g{grid-template-columns:1fr;gap:12px}
+  .c{padding:18px 16px}
+
+  /* Redesigned comparison cards for mobile */
+  .cmp-head{display:none}
+  .cmp-box{background:transparent;border:none;display:flex;flex-direction:column;gap:14px}
+  .cmp-card{display:flex;flex-direction:column;background:rgba(12,16,22,.75);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:18px 16px;gap:12px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .cmp-col-feature b{font-size:16px;display:block;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,.07)}
+  .cmp-col-other{background:rgba(255,255,255,.03);border-radius:12px;padding:10px 12px}
+  .cmp-badge-other{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#7d7078;margin-bottom:4px}
+  .cmp-col-other p{font-size:13.5px;line-height:1.5;color:#a4969e}
+  .cmp-col-fc{background:color-mix(in srgb,var(--a) 10%,transparent);border:1px solid color-mix(in srgb,var(--a) 25%,transparent);border-radius:12px;padding:12px 14px}
+  .cmp-badge-fc{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--a);margin-bottom:6px}
+  .cmp-badge-fc::before{content:"✓";font-weight:900}
+  .cmp-col-fc p{font-size:14px;line-height:1.5;color:#fff;font-weight:500}
+}
 </style>
 </head>
 <body>
@@ -75,7 +121,10 @@ body.m .for-f{display:none}
   </a>
 </nav>
 <header>
-  <h1><img class="lg" src="logo.png" alt=""><span>FitnessCode</span><span class="tagline" id="tagline">Мое&nbsp;личное приложение</span></h1>
+  <h1>
+    <span class="brand-title"><img class="lg" src="logo.png" alt=""><span class="title-text">FitnessCode</span></span>
+    <span class="tagline" id="tagline">Мое&nbsp;личное приложение</span>
+  </h1>
   <div class="sw"><button class="on" data-g="f">Женский режим</button><button data-g="m">Мужской режим</button></div>
 </header>
 <div class="row" id="row"></div>
@@ -96,17 +145,109 @@ body.m .for-f{display:none}
 
 <h2>Чем&nbsp;<span>отличается от&nbsp;других приложений</span></h2>
 <p>Мы не&nbsp;пытались сделать «ещё один трекер». Ниже то,&nbsp;что в&nbsp;FitnessCode сделано иначе.</p>
-<table class="cmp">
-<tr><th></th><th>ЧТО&nbsp;ЧАСТО ВСТРЕЧАЕТСЯ</th><th>FITNESSCODE</th></tr>
-<tr><td>Всё в&nbsp;одном месте</td><td>Отдельные приложения для&nbsp;тренировок, еды, воды <span class="for-f">и&nbsp;цикла</span><span class="for-m">и&nbsp;замеров</span></td><td>Тренировки, питание, вода, замеры <span class="for-f">и&nbsp;цикл</span><span class="for-m">и&nbsp;силовой прогресс</span> в&nbsp;одном приложении с&nbsp;единой историей</td></tr>
-<tr><td>Конфиденциальность</td><td>Аккаунт, облако, передача данных на&nbsp;сервер</td><td>Работает офлайн, данные хранятся на&nbsp;телефоне. Фото прогресса можно закрыть ПИН-кодом</td></tr>
-<tr><td>Скорость тренировки</td><td>Много полей и&nbsp;экранов, ввод занимает время</td><td>Один тап на&nbsp;подход, предзаполненные значения из&nbsp;прошлой тренировки, повтор последней тренировки с&nbsp;главного экрана</td></tr>
-<tr><td>Реклама и&nbsp;подписки</td><td>Платные функции, баннеры, навязчивые предложения</td><td>Без&nbsp;рекламы и&nbsp;без&nbsp;регистрации</td></tr>
-<tr><td>Персонализация</td><td>Один универсальный интерфейс для&nbsp;всех</td><td>Женский и&nbsp;мужской режимы со&nbsp;своим стилем, фото и&nbsp;набором разделов</td></tr>
-<tr><td>Планирование</td><td>Только история уже сделанного</td><td>План на&nbsp;каждый день недели прямо на&nbsp;главной, а&nbsp;не&nbsp;только журнал выполненного</td></tr>
-<tr><td>Часы и&nbsp;здоровье</td><td>Нужно вручную переносить шаги и&nbsp;пульс</td><td>Автоматический импорт из&nbsp;Health Connect и&nbsp;«Huawei Здоровье»</td></tr>
-<tr><td>Внешний вид</td><td>Перегруженные экраны</td><td>Тёмный спокойный интерфейс, крупные элементы, главное действие всегда под&nbsp;рукой</td></tr>
-</table>
+<div class="cmp-box">
+  <div class="cmp-head">
+    <div>КРИТЕРИЙ</div>
+    <div>ЧТО ЧАСТО ВСТРЕЧАЕТСЯ</div>
+    <div>В FITNESSCODE</div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Всё в одном месте</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Отдельные приложения для&nbsp;тренировок, еды, воды <span class="for-f">и&nbsp;цикла</span><span class="for-m">и&nbsp;замеров</span></p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Тренировки, питание, вода, замеры <span class="for-f">и&nbsp;цикл</span><span class="for-m">и&nbsp;силовой прогресс</span> в&nbsp;одном приложении с&nbsp;единой историей</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Конфиденциальность</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Аккаунт, облако, передача данных на&nbsp;сервер</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Работает офлайн, данные хранятся на&nbsp;телефоне. Фото прогресса можно закрыть ПИН-кодом</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Скорость тренировки</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Много полей и&nbsp;экранов, ввод занимает время</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Один тап на&nbsp;подход, предзаполненные значения из&nbsp;прошлой тренировки, повтор последней тренировки с&nbsp;главного экрана</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Реклама и&nbsp;подписки</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Платные функции, баннеры, навязчивые предложения</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Без&nbsp;рекламы и&nbsp;без&nbsp;регистрации</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Персонализация</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Один универсальный интерфейс для&nbsp;всех</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Женский и&nbsp;мужской режимы со&nbsp;своим стилем, фото и&nbsp;набором разделов</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Планирование</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Только история уже сделанного</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>План на&nbsp;каждый день недели прямо на&nbsp;главной, а&nbsp;не&nbsp;только журнал выполненного</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Часы и&nbsp;здоровье</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Нужно вручную переносить шаги и&nbsp;пульс</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Автоматический импорт из&nbsp;Health Connect и&nbsp;«Huawei Здоровье»</p>
+    </div>
+  </div>
+
+  <div class="cmp-card">
+    <div class="cmp-col-feature"><b>Внешний вид</b></div>
+    <div class="cmp-col-other">
+      <span class="cmp-badge-other">Обычно</span>
+      <p>Перегруженные экраны</p>
+    </div>
+    <div class="cmp-col-fc">
+      <span class="cmp-badge-fc">FitnessCode</span>
+      <p>Тёмный спокойный интерфейс, крупные элементы, главное действие всегда под&nbsp;рукой</p>
+    </div>
+  </div>
+</div>
 </section>
 <script>
 var S={f:[['Главная'],['План недели и&nbsp;последняя тренировка'],['Программа тренировки'],['Выполнение тренировки'],['Тренировки'],['Питание'],['Цикл'],['Профиль'],['Замеры тела']],m:[['Главная'],['План недели и&nbsp;последняя тренировка'],['Программа тренировки'],['Выполнение тренировки'],['Итоги тренировки'],['Тренировки'],['Питание'],['Профиль'],['Замеры тела']]};
@@ -134,6 +275,7 @@ draw('f');
   }
 
   function handleWheel(e) {
+    if (window.innerWidth <= 768) return; // Allow natural vertical scroll on mobile
     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // Allow native trackpad horizontal swipe
 
     var maxScroll = row.scrollWidth - row.clientWidth;
