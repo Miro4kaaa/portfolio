@@ -1,0 +1,23 @@
+# robots.txt for https://brandianna.ru/
+# Allow indexing for Yandex, Google and all major search engines
+
+User-agent: *
+Allow: /
+Disallow: /TEST/
+Disallow: /pricing.html
+Disallow: /price.html
+Disallow: /404.html
+Disallow: /success.html
+
+# Yandex bot specifics
+User-agent: Yandex
+Allow: /
+Disallow: /TEST/
+Disallow: /pricing.html
+Disallow: /price.html
+Disallow: /404.html
+Disallow: /success.html
+
+# Host & Sitemap
+Host: https://brandianna.ru
+Sitemap: https://brandianna.ru/sitemap.xml
