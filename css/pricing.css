@@ -1533,6 +1533,12 @@
 /* ============================================================
    3D INFLATABLE ICONS & TARIFF PILLS
    ============================================================ */
+.section-inflatable-icon picture,
+.tariff-inflatable-pill picture,
+.final-author-stand picture {
+  display: contents;
+}
+
 .section-inflatable-icon {
   display: flex;
   justify-content: center;
