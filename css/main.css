@@ -2581,6 +2581,29 @@ a {
   }
 }
 
+/* AI Avatars Grid (Case 2 - 2 rows of 3 videos = 6 videos) */
+.case-video-grid.case-avatars-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1040px;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .case-video-grid.case-avatars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 680px;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-video-grid.case-avatars-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 1.5rem;
+  }
+}
+
 .case-video-card {
   position: relative;
   aspect-ratio: 9/16;
