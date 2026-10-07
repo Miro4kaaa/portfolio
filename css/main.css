@@ -823,7 +823,7 @@ a {
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(2.4rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.85rem, 5.8vw, 5.8rem);
   color: var(--text);
   line-height: 1.08;
   margin-bottom: 2rem;
@@ -832,6 +832,13 @@ a {
   overflow-wrap: normal;
   hyphens: none;
   -webkit-hyphens: none;
+}
+
+@media (max-width: 480px) {
+  .manifesto-heading {
+    font-size: clamp(1.55rem, 7.4vw, 2.05rem);
+    line-height: 1.12;
+  }
 }
 
 .manifesto-watermark-cover {
