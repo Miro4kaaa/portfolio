@@ -1598,7 +1598,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.2rem auto 1.4rem auto;
+  margin: 0.2rem auto -0.4rem auto;
 }
 
 .tariff-inflatable-pill img {
@@ -1645,7 +1645,7 @@
     height: 200px;
   }
   .tariff-inflatable-pill {
-    margin: 0.2rem auto 1.15rem auto;
+    margin: 0.2rem auto -0.3rem auto;
   }
   .tariff-inflatable-pill img {
     max-width: 255px;
