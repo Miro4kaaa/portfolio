@@ -621,6 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ro.observe(manifestoSection);
     }
 
+    const manifestoVideo = document.querySelector('.manifesto-video') || document.querySelector('#clip video');
     if (manifestoVideo) {
         manifestoVideo.addEventListener('loadedmetadata', positionWatermarkStar);
         manifestoVideo.addEventListener('play', positionWatermarkStar);
