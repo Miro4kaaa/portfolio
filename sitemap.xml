@@ -68,6 +68,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://brandianna.ru/case11.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Интерактивный шоукейс приложения -->
   <url>
     <loc>https://brandianna.ru/showcase/</loc>
