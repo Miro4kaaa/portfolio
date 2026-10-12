@@ -2514,6 +2514,10 @@ a {
   transition: opacity 0.2s ease;
 }
 
+.case-showcase-column img + img {
+  margin-top: -1px;
+}
+
 .case-showcase-column img:hover {
   filter: none;
 }
