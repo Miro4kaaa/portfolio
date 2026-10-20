@@ -465,18 +465,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 10. CLIP PREVIEW FACADE PLAY (KINESCOPE)
-    const clipFacade = document.getElementById('clipFacade');
-    const clipIframe = document.getElementById('clipIframe');
-    if (clipFacade && clipIframe) {
-        clipFacade.addEventListener('click', () => {
-            const dataSrc = clipIframe.getAttribute('data-src');
-            if (dataSrc && !clipIframe.getAttribute('src')) {
-                clipIframe.setAttribute('src', dataSrc);
-            }
-            clipFacade.classList.add('hidden');
-        });
-    }
+    // 10. VIDEO PREVIEW FACADES PLAY (KINESCOPE)
+    document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+        const facade = wrapper.querySelector('.video-preview-facade');
+        const iframe = wrapper.querySelector('iframe');
+        if (facade && iframe) {
+            facade.addEventListener('click', () => {
+                const dataSrc = iframe.getAttribute('data-src');
+                if (dataSrc && !iframe.getAttribute('src')) {
+                    iframe.setAttribute('src', dataSrc);
+                }
+                facade.classList.add('hidden');
+            });
+        }
+    });
 
 
     // 13. SERVICE ITEM HOVER
