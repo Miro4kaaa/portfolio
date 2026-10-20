@@ -109,7 +109,7 @@
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#services">Услуги</a></li>
                     <li><a href="#portfolio">Портфолио</a></li>
-                    <li><a href="#clip">Видеоклип</a></li>
+                    <li><a href="#clip">AI-продакшн</a></li>
                     <li><a href="#process">Процесс</a></li>
                     <li><a href="#contact" class="hero-cta" style="padding: 0.5rem 1.2rem; margin-bottom: 0; font-size: 0.85rem;">Связаться</a></li>
                 </ul>
@@ -471,39 +471,87 @@
         </div>
     </section>
 
-    <!-- 7. AI CLIP SECTION (KINESCOPE) -->
+    <!-- 7. AI VIDEO PRODUCTION SECTION (KINESCOPE) -->
     <section class="youtube-section reveal" id="clip">
-        <!-- Clip Floating Icon -->
-        <div class="floating-icon float-anim-2" style="top: 22%; left: 6%; width: 80px; height: 40px;">
+        <!-- Video Floating Icon -->
+        <div class="floating-icon float-anim-2" style="top: 15%; left: 4%; width: 80px; height: 40px;">
             <img src="images/icons/icon_wave.webp" alt="3D Wave">
         </div>
         <div class="container">
-            <span class="section-eyebrow">AI-визуализация моей лирики</span>
-            <h2 class="section-heading">ВИДЕОКЛИП</h2>
-            <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 2rem; font-size: 1.05rem;">
-                Музыкальный клип «Мне нужен ты», полностью сгенерированный и&nbsp;смонтированный с&nbsp;использованием нейросетей нового поколения. Динамичная визуализация, кинематографичный свет и&nbsp;сложная хореография кадров.
+            <span class="section-eyebrow">Генеративное видео &amp; режиссура</span>
+            <h2 class="section-heading">AI-ВИДЕО-ПРОДАКШН</h2>
+            <p style="color: var(--text-muted); max-width: 720px; margin: 0 auto 1.5rem; font-size: 1.05rem;">
+                Кинематографичные AI-фильмы, музыкальные клипы и&nbsp;рекламные сюжеты с&nbsp;глубокой драматургией, сложным светом и&nbsp;реалистичной физикой движения без съёмочной группы и&nbsp;дорогих павильонов.
             </p>
             
-            <div class="video-wrapper">
-                <div class="video-preview-facade" id="clipFacade" style="background-image: url('images/cover-retouched-volume.webp');">
-                    <button class="video-facade-play" aria-label="Воспроизвести клип">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
+            <div class="video-production-grid">
+                <!-- Video 1: Куртка не по размеру (Omni Flash 1.1) -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-preview-facade" style="background-image: url('images/cover-jacket-omni.webp');">
+                            <button class="video-facade-play" aria-label="Воспроизвести видео">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                        </div>
+                        <iframe 
+                            src=""
+                            data-src="https://kinescope.io/embed/4p2Uo3P9RVE6moS2Q5XjPK?autoplay=1" 
+                            title="Куртка не по размеру | Omni Flash 1.1"
+                            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" 
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-meta">
+                            <span class="video-card-badge">Видео без камер</span>
+                            <span class="video-card-tag">Короткий метр &middot; Драма</span>
+                        </div>
+                        <h3 class="video-card-title">Куртка не по размеру</h3>
+                        <p class="video-card-desc">
+                            Задачи: добиться от Omni Flash 1.1 кинематографичности, эмоциональности, консистентности, тактильных и&nbsp;ASMR ощущений.
+                        </p>
+                        <div class="video-card-footer">
+                            <a href="https://kinescope.io/4p2Uo3P9RVE6moS2Q5XjPK" target="_blank" rel="noopener noreferrer" class="video-btn-link">
+                                Смотреть на&nbsp;Kinescope &nearr;
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <iframe 
-                    id="clipIframe"
-                    src=""
-                    data-src="https://kinescope.io/embed/qhabXvC2ft9kCGSpS7v5xo?autoplay=1" 
-                    title="Анна Логунова | AI Клип «Мне нужен ты»"
-                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" 
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div style="margin-top: 3.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://kinescope.io/qhabXvC2ft9kCGSpS7v5xo" target="_blank" rel="noopener noreferrer" class="hero-cta" style="padding: 0.8rem 1.8rem; font-size: 0.95rem; margin-bottom: 0;">
-                    Смотреть на&nbsp;Kinescope &nearr;
-                </a>
+
+                <!-- Video 2: Мне нужен ты (AI Музыкальный клип) -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-preview-facade" style="background-image: url('images/cover-retouched-volume.webp');">
+                            <button class="video-facade-play" aria-label="Воспроизвести клип">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                        </div>
+                        <iframe 
+                            src=""
+                            data-src="https://kinescope.io/embed/qhabXvC2ft9kCGSpS7v5xo?autoplay=1" 
+                            title="Анна Логунова | AI Клип «Мне нужен ты»"
+                            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" 
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-card-meta">
+                            <span class="video-card-badge">Music Video</span>
+                            <span class="video-card-tag">AI-клип &middot; Лирика</span>
+                        </div>
+                        <h3 class="video-card-title">Мне нужен ты</h3>
+                        <p class="video-card-desc">
+                            Музыкальный клип на&nbsp;авторскую лирику, полностью сгенерированный и&nbsp;смонтированный с&nbsp;использованием нейросетей нового поколения. Динамичная визуализация, кинематографичный свет и&nbsp;сложная хореография кадров.
+                        </p>
+                        <div class="video-card-footer">
+                            <a href="https://kinescope.io/qhabXvC2ft9kCGSpS7v5xo" target="_blank" rel="noopener noreferrer" class="video-btn-link">
+                                Смотреть на&nbsp;Kinescope &nearr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
