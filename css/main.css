@@ -2647,8 +2647,9 @@ a {
   .case-hero-mascot {
     width: clamp(216px, 50vw, 288px);
     margin-top: 0;
-    align-self: flex-end;
-    margin-right: 0;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
