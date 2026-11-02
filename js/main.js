@@ -628,4 +628,43 @@ document.addEventListener('DOMContentLoaded', () => {
         manifestoVideo.addEventListener('loadedmetadata', positionWatermarkStar);
         manifestoVideo.addEventListener('play', positionWatermarkStar);
     }
+
+    // 16. TIKTOK PHONE MOCKUP SOUND TOGGLE
+    const tiktokCards = document.querySelectorAll('.tiktok-channel-card');
+    if (tiktokCards.length > 0) {
+        const muteAllExcept = (activeVideo) => {
+            tiktokCards.forEach(card => {
+                const v = card.querySelector('.tiktok-phone-video');
+                const btn = card.querySelector('.tiktok-sound-toggle');
+                if (v && v !== activeVideo) {
+                    v.muted = true;
+                    if (btn) btn.classList.remove('is-unmuted');
+                }
+            });
+        };
+
+        tiktokCards.forEach(card => {
+            const video = card.querySelector('.tiktok-phone-video');
+            const soundBtn = card.querySelector('.tiktok-sound-toggle');
+            if (!video || !soundBtn) return;
+
+            const toggleSound = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (video.muted) {
+                    muteAllExcept(video);
+                    video.muted = false;
+                    video.play().catch(() => {});
+                    soundBtn.classList.add('is-unmuted');
+                } else {
+                    video.muted = true;
+                    soundBtn.classList.remove('is-unmuted');
+                }
+            };
+
+            soundBtn.addEventListener('click', toggleSound);
+            video.addEventListener('click', toggleSound);
+        });
+    }
 });
+
