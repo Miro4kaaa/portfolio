@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         const revealObserverOptions = {
             root: null,
-            rootMargin: '-50px',
-            threshold: 0.15
+            rootMargin: '0px 0px -20px 0px',
+            threshold: 0.02
         };
 
         const revealObserver = new IntersectionObserver((entries, observer) => {
